@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Repository for trade persistence operations
+ * Repository for trade persistence operations, repository means here database
  */
 @Repository
 public interface TradeRepository extends JpaRepository<Trade, UUID> {
@@ -34,4 +34,10 @@ public interface TradeRepository extends JpaRepository<Trade, UUID> {
     @Query("SELECT t FROM Trade t WHERE DATE(t.tradeTime) = :date ORDER BY t.tradeTime DESC")
     List<Trade> findAllByDate(@Param("date") LocalDate date);
 }
+
+
+
+
+
+
 
